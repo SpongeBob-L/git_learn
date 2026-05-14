@@ -33,20 +33,27 @@
 
 ### 一、Git 的基础概念
 
-&emsp;&emsp;学习Git，主要就要理解两个概念：<br>
-&emsp;&emsp;1、什么是回溯？<br>
-&emsp;&emsp;用一个“游戏存档”的比喻来理解 Git。<br>
-&emsp;&emsp;当你玩一款游戏，游戏途中每完成一个重要任务，我们都会做一次存档点，而Git的存档会比游戏当中还要高级一些，Git能够回溯到任意的存档点并且还拥有更强大的功能。<br>
-&emsp;&emsp;2、什么是分支？<br>
+&emsp;&emsp;学习Git，主要就要理解两个概念：
+
+&emsp;&emsp;1、什么是回溯？
+
+&emsp;&emsp;用一个“游戏存档”的比喻来理解 Git。
+
+&emsp;&emsp;当你玩一款游戏，游戏途中每完成一个重要任务，我们都会做一次存档点，而Git的存档会比游戏当中还要高级一些，Git能够回溯到任意的存档点并且还拥有更强大的功能。
+
+&emsp;&emsp;2、什么是分支？
+
 &emsp;&emsp;以Minecraft(我的世界)这款游戏为例，我的世界里可以创建多个世界，而Git中可以创建多个分支。当你想要为自己的主分支做出改变但又不想影响主分支时，你就可以拷贝一份主分支到一个新分支当中，这样就能在新分支中随意改动，当改动到满意的程度还能合并到主分支当中。分支可以理解为副本，该副本可以是空的也可以是拷贝下来的。
 
 ### 二、最常用的基础命令
 
 -  **git init** 
 
-&emsp;&emsp;在文件夹内使用该命令，该文件夹就会升级成超级无敌记忆文件夹，并且出现以下语句：<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Initialized empty Git repository in <XX路径>**<br>
-&emsp;&emsp;这个语句的意思是&emsp;&emsp;**在XX路径中初始化空Git仓库**<br>
+&emsp;&emsp;在文件夹内使用该命令，该文件夹就会升级成超级无敌记忆文件夹，并且出现以下语句：
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Initialized empty Git repository in <XX路径>**
+
+&emsp;&emsp;这个语句的意思是&emsp;&emsp;**在XX路径中初始化空Git仓库**
 
 -  **git add .**
 
