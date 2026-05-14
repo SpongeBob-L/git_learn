@@ -1,6 +1,6 @@
 # 有关Git的学习内容
 
-&emsp&emsp&emsp&emsp这是我为了学习并理解Git而编写的文章。
+&emsp;&emsp;&emsp;&emsp;这是我为了学习并理解Git而编写的文章。
 
 ### 一、Git 的基础概念
 
