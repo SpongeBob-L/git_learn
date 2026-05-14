@@ -15,23 +15,23 @@
 
 -  **git init** 
 
-  在文件夹内使用该命令，该文件夹就会升级成超级无敌记忆文件夹，并且出现以下语句：<br>
-​                                  **Initialized empty Git repository in <XX路径>**<br>
-  这个语句的意思是       **在XX路径中初始化空Git仓库**<br>
+&emsp;&emsp;在文件夹内使用该命令，该文件夹就会升级成超级无敌记忆文件夹，并且出现以下语句：<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Initialized empty Git repository in <XX路径>**<br>
+&emsp;&emsp;这个语句的意思是&emsp;&emsp;**在XX路径中初始化空Git仓库**<br>
 
 -  **git add .**
 
-  执行该命令时啥也不会发生，但是！已经把改动所有的文件加入“准备存档”列表了。
+&emsp;&emsp;执行该命令时啥也不会发生，但是！已经把改动所有的文件加入“准备存档”列表了。
 
 -  **git commit -m '说明'**
 
-  当执行完后，会出现一串字，上面有说明，有改动的文件数量，有执行的操作，这就是完成了存档，会在log中记录存档点。
+&emsp;&emsp;当执行完后，会出现一串字，上面有说明，有改动的文件数量，有执行的操作，这就是完成了存档，会在log中记录存档点。
 
-  如果出现了**nothing to commit**，那说明啥也没干，那存个球档，无法存档。
+&emsp;&emsp;如果出现了**nothing to commit**，那说明啥也没干，那存个球档，无法存档。
 
 -  **git log**
 
-  能看到所有存档点记录，每个存档点都有一个唯一的ID(是一串乱码)。
+&emsp;&emsp;能看到所有存档点记录，每个存档点都有一个唯一的ID(是一串乱码)。
 
 
 ### 三、回溯功能 —— 时光倒流
@@ -51,9 +51,9 @@
 
 - **git checkout b789abc**   # b789abc 是存档点 B 的 ID
 
-  执行后，你的游戏界面显示的是第二章刚写完的样子，你可以看看代码、修个小 bug，但 Git 会提醒你：“现在是只读模式，如果修改，最好新开一个分支。”
+&emsp;&emsp;执行后，你的游戏界面显示的是第二章刚写完的样子，你可以看看代码、修个小 bug，但 Git 会提醒你：“现在是只读模式，如果修改，最好新开一个分支。”
 
-  特点：未来的存档点 C 还在，随时可以切回去：
+&emsp;&emsp;特点：未来的存档点 C 还在，随时可以切回去：
 
 - **git checkout main**         # 回到最新分支（存档点 C ）
 
@@ -61,15 +61,13 @@
 
 - **git reset --hard b789abc**
 
-  这下真的把项目状态强行改回存档点 B ，同时会把当前分支的指针也挪到 B。
+&emsp;&emsp;这下真的把项目状态强行改回存档点 B ，同时会把当前分支的指针也挪到 B。
 
-  此时再用 **git log** 看，再也看不到存档点 C 了，好像它被删除了一样。
+&emsp;&emsp;此时再用 **git log** 看，再也看不到存档点 C 了，好像它被删除了一样。
 
-  那未来存档点 C 真的没了吗？
+&emsp;&emsp;那未来存档点 C 真的没了吗？
 
-  不是真的消失。Git 其实偷偷留着所有历史，只要还没运行 **git gc** 清理垃圾，可以用 **git reflog** 找回存档点 C 的 ID，然后恢复。
-
-但一般人会觉得“我回不去了”，所以慎用 reset --hard。
+&emsp;&emsp;不是真的消失。Git 其实偷偷留着所有历史，只要还没运行 **git gc** 清理垃圾，可以用 **git reflog** 找回存档点 C 的 ID，然后恢复。但一般人会觉得“我回不去了”，所以慎用 reset --hard。
 
 >   log里面会这样变动：A → B → C  变为 A → B （C看不到了）
 
@@ -77,7 +75,7 @@
 
 - **git revert c789abc**   # 新产生一个存档点 D，内容刚好是“把存档点 C 的改动撤销掉”即存档点 B 的拷贝
 
-  这样在主线里“假装”没有发生过存档点 C，但存档点 C 依然存在，只是效果被抵消了。最安全，适合多人协作。
+&emsp;&emsp;这样在主线里“假装”没有发生过存档点 C，但存档点 C 依然存在，只是效果被抵消了。最安全，适合多人协作。
 
 >   log里面会这样变动：A → B → C   变为 A → B → C → D( D = B , C还在 ）
 
@@ -93,23 +91,23 @@
 
 #### 1、查看所有分支信息
 
-- **git branch**                   # 查看本地分支（当前分支前有 * 标记）
-- **git branch -a**              # 查看所有分支（本地 + 远程）
-- **git switch <分支名>**   # 切换分支
+- **git branch**&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;# 查看本地分支（当前分支前有 * 标记）
+- **git branch -a**&emsp;&emsp;&emsp;&emsp;# 查看所有分支（本地 + 远程）
+- **git switch <分支名>**&emsp;# 切换分支
 
 #### 2、添加分支
 
-- **git branch <新分支名>**           # 创建新分支（不切换）
-- **git checkout -b <新分支名>**  # 创建并切换到新分支
+- **git branch <新分支名>**&emsp;&emsp;&emsp;&nbsp;# 创建新分支（不切换）
+- **git checkout -b <新分支名>**&emsp;# 创建并切换到新分支
 
 #### 3、删除分支
 
-  # 删除本地分支（需先切换到其他分支）
+&emsp;&emsp;# 删除本地分支（需先切换到其他分支）
 
-- **git branch -d <分支名>**      # 安全删除（已合并）
-- **git branch -D <分支名>**     # 强制删除
+- **git branch -d <分支名>**&emsp;# 安全删除（已合并）
+- **git branch -D <分支名>**&emsp;# 强制删除
 
-  # 删除远程分支
+&emsp;&emsp;# 删除远程分支
 
 - **git push origin --delete <分支名>**
 
@@ -119,16 +117,16 @@
 
 - (1) 拉取自己的仓库到本地
 
-  **git clone git@github.com:SpongeBob-L/git_learn.git**
+&emsp;&emsp;**git clone git@github.com:SpongeBob-L/git_learn.git**
 
 - (2) 编写内容并保存
 
-  **git add .**                                     # 保存内容<br>
-  **git commit -m '存档点名称'**   # 提交存档
+&emsp;&emsp;**git add .**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;# 保存内容<br>
+&emsp;&emsp;**git commit -m '存档点名称'**&emsp;# 提交存档
 
 - (3) 选择分支推送到远程仓库
-- **git push origin HEAD**              # 推送当前分支到远程
-- **git push origin <本地分支名>** # 推送本地指定分支到远程（自动创建远程分支）
+- **git push origin HEAD**&emsp;&emsp;&emsp;&emsp;# 推送当前分支到远程
+- **git push origin <本地分支名>**&nbsp;&nbsp;# 推送本地指定分支到远程（自动创建远程分支）
 
 #### 2、不简单操作
 
@@ -137,11 +135,11 @@
 
 ---------
 
-  这时候想**直接把本地存档推上去覆盖云端**
+&emsp;&emsp;这时候想**直接把本地存档推上去覆盖云端**
 
-  Git 会说：“不行！云端已经有内容了，而且跟本地没有任何共同的历史记录。我无法判断你是想合并还是想彻底毁灭云端的成果。”
+&emsp;&emsp;Git 会说：“不行！云端已经有内容了，而且跟本地没有任何共同的历史记录。我无法判断你是想合并还是想彻底毁灭云端的成果。”
 
-  这就是典型的 **“本地和云端没有公共祖先”** 或 **“本地落后于云端”** 的情况。
+&emsp;&emsp;这就是典型的 **“本地和云端没有公共祖先”** 或 **“本地落后于云端”** 的情况。
 
 ---------
 
